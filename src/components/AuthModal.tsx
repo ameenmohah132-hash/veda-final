@@ -68,13 +68,13 @@ export function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps) {
           setErrorMsg(t('auth.errorAgreeTerms'));
           return;
         }
-        const { user, error } = await signUpWithEmailPassword(email, password, fullName || email.split('@')[0]);
+        const { user, session, error } = await signUpWithEmailPassword(email, password, fullName || email.split('@')[0]);
         if (error) {
           setErrorMsg(error);
           return;
         }
-        setSuccessMsg(t('auth.accountCreated'));
-        if (user) {
+        if (session) {
+          setSuccessMsg(t('auth.accountCreated'));
           setTimeout(() => {
             onSuccess(user);
             onClose();

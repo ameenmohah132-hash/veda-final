@@ -106,12 +106,12 @@ export function OnboardingFlow({ onComplete, initialTier = 'free', skipAuthStep 
           return;
         }
         const displayName = fullName.trim() || email.split('@')[0];
-        const { user, error } = await signUpWithEmailPassword(email, password, displayName);
+        const { session, error } = await signUpWithEmailPassword(email, password, displayName);
         if (error) {
           setErrorMsg(error);
           return;
         }
-        if (!user) {
+        if (!session) {
           setErrorMsg('Please check your email to confirm your account, then sign in.');
           return;
         }
