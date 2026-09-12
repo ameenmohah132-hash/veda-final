@@ -1,0 +1,7 @@
+{
+  "name": "Veda",
+  "description": "Veda — Unified personal daily organization, study planner, focus timer, Islamic worship, finance, goals, and AI assistant.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,6 @@
+# SPA fallback: this app has no client-side routing today (tabs are in-memory
+# state, not URL-based), but this keeps any unexpected path — including
+# anything Supabase's OAuth redirect ever appends — landing on the app
+# instead of a Netlify 404. Static files (like /legal/terms.html and
+# /quran/mushaf.pdf) are matched first automatically and are unaffected.
+/*    /index.html   200
